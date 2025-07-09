@@ -1,10 +1,18 @@
-import React from "react";
+import React from 'react';
+import Layout from '../components/Layout';
 
-export default function Home() {
+const Projects: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-10">
-      <h1 className="text-4xl font-bold">Bienvenue sur l'accueil</h1>
-      <p className="text-lg mt-4">Ici on construira ta landing page avec vidéo, texte, etc.</p>
-    </div>
+    <Layout pageTitle="Mes Projets">
+      <div className="text">
+        <h2>Mes</h2>
+        <h3>Projets</h3>
+        <p>Voici un autre projet que j'ai créé, <br/>
+        Ces projets ont pour but de me démarquer des autres développeurs. </p>
+        <a href="video_web02.mp4">Un Site vitrine avec le <strong>GRETA</strong>.</a>
+        <a href="Tic TaC TOE LUCAS.mp4">Bande-Annonce</a>
+      </div>
+    </Layout>
   );
-}
+};
+export default Projects;
