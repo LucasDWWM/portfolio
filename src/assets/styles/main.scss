@@ -1,38 +1,9 @@
-// src/styles/main.scss
-@import './variables';
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-body {
-  @apply m-0 p-0 overflow-x-hidden font-sans bg-black text-white;
-}
-
-.animate-fade-in {
-  animation: fadeIn 1s ease-out forwards;
-}
-
-.animate-slide-up {
-  animation: slideUp 1.2s ease-out forwards;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+@import 'variables';
+@import 'mixins';
+@import 'base';
+@import 'header';
+@import 'menu';
+@import 'showcase';
+@import 'contact';
+@import 'projects';
+@import 'home'; 

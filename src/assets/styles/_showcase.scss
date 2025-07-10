@@ -1,0 +1,40 @@
+/* src/assets/styles/_showcase.scss */
+
+// Import variables if you have them, e.g., @import 'variables';
+
+.showcase-overlay {
+  background: #03a9f4; // Your original blue color
+  mix-blend-mode: overlay; // The blend mode
+}
+
+.showcase {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111; 
+  transition: 1s; 
+  z-index: 2; 
+}
+
+.showcase.active {
+  right: 300px;
+}
+
+.showcase video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.showcase .text {
+  position: relative;
+  z-index: 10;
+}

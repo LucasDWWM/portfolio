@@ -1,10 +1,9 @@
-// src/App.tsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./assets/pages/Home";
 import Projects from "./assets/pages/Projects";
 import Contact from "./assets/pages/Contact";
-import './App.css'
+import './assets/styles/main.scss'
 
 export default function App() {
   return (

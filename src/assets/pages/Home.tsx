@@ -1,34 +1,28 @@
-import videoBg from '../videos/video_web.mp4'
+// src/assets/pages/Home.tsx
+import React from "react";
+import Layout from '../components/Layout';
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
-    <section className="relative w-full h-screen flex items-center justify-center text-center">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
-        src={videoBg}
-      />
-      <div className="absolute inset-0 bg-black/60 z-10" />
-      <div className="relative z-20 max-w-2xl px-4">
-        <h2 className="text-5xl font-extrabold mb-4 animate-fade-in">
-          Votre Développeur Web
-        </h2>
-        <p className="text-lg mb-6 animate-slide-up">
-          Bienvenue sur mon portfolio 👨‍💻<br />
-          Je suis <strong>passionné</strong>, <strong>curieux</strong> et <strong>motivé</strong> !
+    <Layout pageTitle="Accueil">
+      <div className="text-white">
+        <h1 className="text-5xl font-extrabold mb-4 leading-tight uppercase">
+          Votre<br/>Développeur Web
+        </h1>
+        <p className="text-lg mb-6 max-w-[700px] font-normal">
+          Bienvenue sur mon portfolio 👨‍💻 <br/>
+          Je me présente Lipari Lucas, je suis actuellement en recherche de travail.<br/>
+          Je suis <strong className="font-bold">Passionné</strong>, <strong className="font-bold">Curieux</strong>, <strong className="font-bold">Motivé</strong> ... JE SUIS <strong className="font-bold">VOTRE</strong> DEVELOPPEUR WEB
         </p>
         <a
           href="/pdf/CV.pdf"
-          className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-full transition"
+          className="inline-block font-medium text-base bg-white px-8 py-3 uppercase text-gray-900 tracking-widest transition-all duration-200 hover:tracking-[6px] mt-2"
         >
           Télécharger mon CV
         </a>
       </div>
-    </section>
-  )
-}
+    </Layout>
+  );
+};
 
-export default Home
+export default Home;
