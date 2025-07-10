@@ -3,7 +3,6 @@ import Header from './Header';
 import Menu from './Menu';
 import SocialLinks from './SocialLinks';
 import videoBg from '../videos/video_web.mp4';
-
 import '../styles/_showcase.scss';
 
 interface LayoutProps {
