@@ -1,39 +1,361 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 1000; /* Ensure header is on top */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo {
+    color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+// Toggle button
+.toggle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: url(../images/icons8-toggle-off-96.png);
+    background-repeat: no-repeat;
+    background-size: 55px;
+    background-position: center;
+    cursor: pointer;
+}
+.toggle.active {
+    background: url(../images/icons8-toggle-on-96.png);
+    background-repeat: no-repeat;
+    background-size: 55px;
+    background-position: center;
+    cursor: pointer;
+}
+
+// Main showcase section
+.showcase {
+    position: absolute;
+    right: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #111;
+    transition: 0.5s;
+    z-index: 2;
+}
+
+
+.showcase.active {
+    right: 300px; 
+}
+
+.showcase video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    z-index: 0;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #03a9f4; /* Blue overlay */
+    mix-blend-mode: overlay;
+    z-index: 1;
+}
+
+// Text content styles (from your Home.tsx)
 .home-text-content {
-
+    position: relative;
+    z-index: 10;
+    max-width: 700px;
+    color: #fff;
+    margin-right: 65em;
 }
 
-.home-text-content h1,
+.home-text-content h1 {
+    font-size: 5em;
+    font-weight: 800;
+    line-height: 1em;
+    text-transform: uppercase;
+    margin-bottom: 0.2em;
+}
 .home-text-content h2 {
-  font-size: 5em; 
-  font-weight: 800;
-  color: #fff;
-  line-height: 1em;
-  text-transform: uppercase;
+    font-size: 4em;
+    font-weight: 700;
+    line-height: 1em;
+    text-transform: uppercase;
 }
-
 .home-text-content p {
-  font-size: 1.1em;
-  color: #fff;
-  margin: 20px 0;
-  font-weight: 400;
-  max-width: 700px; 
+    font-size: 1.1em;
+    margin: 20px 0;
+    font-weight: 400;
 }
-
 .home-text-content a {
-  display: inline-block;
-  font-size: 1em;
-  background: #fff;
-  padding: 10px 30px;
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: 500;
-  margin-top: 10px;
-  color: #111;
-  letter-spacing: 2px;
-  transition: 0.2s;
+    display: inline-block;
+    font-size: 1em;
+    background: #fff;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #111;
+    letter-spacing: 2px;
+    transition: 0.2s;
+}
+.home-text-content a:hover {
+    letter-spacing: 6px;
 }
 
-.home-text-content a:hover {
-  letter-spacing: 6px;
+// Social links (bottom left)
+.social {
+    position: absolute;
+    z-index: 10;
+    bottom: 20px;
+    left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.social li {
+    list-style: none;
+}
+.social li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1em;
+    transition: 0.5s;
+}
+.social li a img {
+    filter: invert(1); /* Make icons white */
+    transform: scale(0.5); /* Scale down icons */
+    margin-right: 5px; /* Space between icon and text */
+    margin-left: 50px;
+    transition: inherit;
+}
+.social li a:hover {
+    color: #03a9f4;
+}
+.social li a:hover img {
+    transform: scale(0.5) translateY(-10px);
+}
+
+// Menu (slides from right)
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #f2f2f2;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(100%);
+}
+.menu.active {
+    transform: translateX(0); /* Slide in */
+}
+.menu ul {
+    position: relative;
+    padding: 0;
+    text-align: center;
+}
+.menu ul li {
+    list-style: none;
+    margin: 20px 0;
+}
+.menu ul li a {
+    text-decoration: none;
+    font-size: 24px;
+    color: #111;
+    transition: 0.2s;
+}
+.menu ul li a:hover {
+    color: #0d80b6;
+}
+
+// Settings Popup
+.settings-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 25px 35px;
+    border-radius: 8px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 320px;
+}
+
+.settings-popup .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    cursor: pointer;
+    font-size: 1.8em;
+    color: #fff;
+    font-weight: 300;
+}
+
+.settings-popup .setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1em;
+}
+
+.settings-popup .setting-item label {
+    font-weight: 300;
+}
+
+.settings-popup .setting-item select {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.settings-popup .setting-item input[type="checkbox"] {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.settings-popup .setting-item input[type="checkbox"]:checked {
+    background-color: #03a9f4;
+    border-color: #03a9f4;
+}
+
+.settings-popup .setting-item input[type="checkbox"]:checked::after {
+    content: '\2713';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.settings-popup .slider-container {
+    width: 120px;
+    height: 6px;
+    background-color: #555;
+    border-radius: 3px;
+    position: relative;
+    cursor: grab;
+}
+
+.settings-popup .slider-fill {
+    position: absolute;
+    height: 100%;
+    background-color: #03a9f4;
+    border-radius: 3px;
+}
+
+.settings-popup .slider-thumb {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    cursor: grab;
+}
+
+.settings-popup .main-menu-btn {
+    display: block;
+    width: fit-content;
+    margin: 10px auto 0;
+    background-color: #03a9f4;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.settings-popup .main-menu-btn:hover {
+    background-color: darken(#03a9f4, 10%);
+}
+
+// Settings Icon (top right, outside the menu toggle)
+.settings-icon {
+    position: absolute;
+    top: 40px; 
+    right: 100px; 
+    cursor: pointer;
+    z-index: 1000;
+    img {
+        width: 30px;
+        height: 30px;
+        filter: invert(1);
+    }
+}
+
+@media (max-width: 991px) {
+    .showcase,
+    .showcase header {
+        padding: 40px;
+    }
+    .home-text-content h1 {
+        font-size: 3em;
+    }
+    .home-text-content h2 {
+        font-size: 2em;
+    }
+    .social {
+        left: 40px;
+    }
+    .settings-icon {
+        right: 40px;
+    }
+    .settings-popup {
+        width: 90%;
+        padding: 20px;
+        gap: 15px;
+    }
 }

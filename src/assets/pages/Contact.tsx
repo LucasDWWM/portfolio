@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import Layout from '../components/Layout';
+import '../styles/_contact.scss'
 
 const Contact: React.FC = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('');
 
+// The provided query is a partial TypeScript function declaration for a form submission handler in React
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('Envoi en cours...');
@@ -33,7 +34,6 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <Layout pageTitle="Contactez-moi">
       <div className="text">
         <h2>Contactez-moi</h2>
         <div className="formulaire">
@@ -65,7 +65,6 @@ const Contact: React.FC = () => {
           </form>
         </div>
       </div>
-    </Layout>
   );
 };
 export default Contact;

@@ -1,9 +1,8 @@
 import React from 'react';
-import Layout from '../components/Layout';
+import '../styles/_projects.scss'
 
 const Projects: React.FC = () => {
   return (
-    <Layout pageTitle="Mes Projets">
       <div className="text">
         <h2>Mes</h2>
         <h3>Projets</h3>
@@ -12,7 +11,6 @@ const Projects: React.FC = () => {
         <a href="video_web02.mp4">Un Site vitrine avec le <strong>GRETA</strong>.</a>
         <a href="Tic TaC TOE LUCAS.mp4">Bande-Annonce</a>
       </div>
-    </Layout>
   );
 };
 export default Projects;

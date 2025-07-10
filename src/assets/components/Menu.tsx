@@ -1,21 +1,45 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import '../styles/_menu.scss'
 
-interface MenuProps {
-  isActive: boolean;
-  toggleMenu: () => void;
+interface Props {
+  isActive: boolean
+  toggleMenu(): void
 }
 
-const Menu: React.FC<MenuProps> = ({ isActive, toggleMenu }) => {
+const Menu: React.FC<Props> = ({ isActive, toggleMenu }) => {
   return (
-    <div className={`menu ${isActive ? 'active' : ''}`}>
+    <div
+      className={`
+        ${isActive ? 'translate-x-0' : 'translate-x-full'}`}>
       <ul>
-        <li><Link to="/" onClick={toggleMenu}>Accueil</Link></li>
-        <li><Link to="/projets" onClick={toggleMenu}>Mes projets</Link></li>
-        <li><Link to="/contact" onClick={toggleMenu}>Contact</Link></li>
-        <li><a href="/pdf/CV.pdf" target="_blank" rel="noopener noreferrer" onClick={toggleMenu}>Télécharger mon CV</a></li>
+        {[
+          { to: '/',       label: 'Accueil' },
+          { to: '/projets', label: 'Mes projets' },
+          { to: '/contact',  label: 'Contact' },
+        ].map((link) => (
+          <li key={link.to}>
+            <Link
+              to={link.to}
+              onClick={toggleMenu}
+              className="text-gray-800 hover:text-blue-500">
+              {link.label}
+            </Link>
+          </li>
+        ))}
+        <li>
+          <a
+            href="/pdf/CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={toggleMenu}
+            className="text-gray-800 hover:text-blue-500">
+            Télécharger mon CV
+          </a>
+        </li>
       </ul>
     </div>
-  );
-};
-export default Menu;
+  )
+}
+
+export default Menu
