@@ -78,17 +78,16 @@ const Contact: React.FC = () => {
           <h3>Informations Directes</h3>
           <p>
             <img src="/images/at-solid.svg" alt="Email Icon" className="icon" />
-            Email : <a href="mailto:lucaslipari06@gmail.com">votre.email@example.com</a>
+            Email : <a href="mailto:lucaslipari06@gmail.com"> lucasapple06@gmail.com</a>
           </p>
           <p>
             <img src="/images/linkedin-brands.svg" alt="LinkedIn Icon" className="icon" />
-            LinkedIn : <a href="https://www.linkedin.com/in/lucas-lipari-868369233/" target="_blank" rel="noopener noreferrer">Linkedin</a>
+            LinkedIn : <a href="https://www.linkedin.com/in/lucas-lipari-868369233/" target="_blank" rel="noopener noreferrer"> Linkedin</a>
           </p>
           <p>
             <img src="/images/github-brands.svg" alt="GitHub Icon" className="icon" />
-            GitHub : <a href="https://github.com/LucasDWWM" target="_blank" rel="noopener noreferrer">GitHub</a>
+            GitHub : <a href="https://github.com/LucasDWWM" target="_blank" rel="noopener noreferrer"> GitHub</a>
           </p>
-          {/* Ajoutez d'autres informations si pertinent, ex: numéro de téléphone */}
         </div>
       </div>
     </div>

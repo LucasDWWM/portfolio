@@ -18,9 +18,8 @@ const projects: Project[] = [
     title: "Portfolio Gamifié (Ce site !)",
     subtitle: "Démarquez-vous avec une expérience unique",
     description: "Mon portfolio personnel, conçu pour présenter mes compétences en développement web de manière originale et interactive, inspirée par l'univers des jeux vidéo. Il utilise une vidéo de fond pour créer une immersion et une navigation fluide grâce à React Router.",
-    imageUrl: "/images/portfolio-preview.jpg", // Créez une image pour ça !
-    liveLink: "https://votre-domaine.com", // Mettez votre vrai domaine ici une fois déployé
-    githubLink: "https://github.com/LucasDWWM/my-portfolio", // Mettez le lien de votre dépôt réel
+    imageUrl: "/images/portfolio-preview.png", // Créez une image pour ça !
+    githubLink: "https://github.com/LucasDWWM/portfolio", // Mettez le lien de votre dépôt réel
     technologies: ["React", "TypeScript", "Bun", "TailwindCSS", "SCSS", "Vite", "React Router"],
   },
   {
@@ -28,17 +27,29 @@ const projects: Project[] = [
     title: "Site Vitrine avec le GRETA",
     subtitle: "Projet de groupe pour une association",
     description: "Développement d'un site web vitrine complet pour une association dans le cadre de ma formation avec le GRETA. Ce projet m'a permis de travailler en équipe et d'appliquer des principes de conception web pour un client réel.",
-    imageUrl: "/images/greta-project-preview.jpg", // Capture d'écran du site GRETA
-    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"], // Technologies du projet GRETA
+    imageUrl: "/images/greta-project-preview.png", // Capture d'écran du site GRETA
+    technologies: ["HTML", "CSS"], // Technologies du projet GRETA
   },
   {
     id: 3,
     title: "Jeu : Tic Tac Toe 🎲",
     subtitle: "Une implémentation amusante et interactive",
     description: "Une version moderne du classique Tic Tac Toe, développée pour explorer les animations front-end et la logique de jeu. Ce projet met en avant ma capacité à créer des expériences utilisateur engageantes et réactives.",
-    imageUrl: "/images/tictactoe-preview.jpg", // Capture d'écran du jeu
+    imageUrl: "/images/tictactoe-preview.png", // Capture d'écran du jeu
     technologies: ["Swift"],
   },
+
+  {
+    id: 4,
+    title: "Terre d'Espoir",
+    subtitle: "cultiver la terre semée des secondes chances",
+    description: "On accueille des personnes en fin de peine pour les aider à préparer leur retour à la vie en société. Pendant 6 à 12 mois, les résidents vivent dans un cadre paisible, humain et structurant. Ils retrouvent un quotidien simple : des repas partagés, des discussions, des activités collectives. C’est un temps pour se poser, se reconnecter, réapprendre à vivre avec les autres.",
+    imageUrl: "/images/terre-d-Espoir-preview.png", // Capture d'écran du jeu
+    liveLink: "https://lucasdwwm.github.io/terre_d_espoir/",
+    githubLink: "https://github.com/LucasDWWM/terre_d_espoir", // Mettez le lien de votre dépôt réel
+    technologies: ["HTML", "CSS" , "Javascript"],
+  },
+
   // Ajoutez d'autres projets ici
   // {
   //   id: 4,
