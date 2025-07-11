@@ -9,7 +9,7 @@ import '../styles/_header.scss'
 //
 
 //
-// Une interface en TypeScript sert à décrire la forme (le « contrat ») d’un objet :
+// Une interface en TypeScript sert à décrire la forme d’un objet :
 // - Quels champs il doit contenir
 // - Leurs types (string, number, fonction, etc.)
 // - Éventuellement s’ils sont optionnels (prop?)
