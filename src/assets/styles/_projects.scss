@@ -1,13 +1,7 @@
-// src/styles/_projects.scss
-
-// Importez les variables ou mixins globaux si vous en avez
-// @import 'variables';
-// @import 'mixins';
-
 .projects-container {
     position: relative;
     z-index: 10;
-    max-width: 1200px; // Plus large pour les grilles de projets
+    max-width: 2000px; // Plus large pour les grilles de projets
     margin: 80px auto 40px;
     padding: 40px;
     background-color: rgba(255, 255, 255, 0.95);
