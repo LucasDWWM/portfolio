@@ -24,24 +24,6 @@ header .logo {
     cursor: pointer;
 }
 
-// Toggle button
-.toggle {
-    position: relative;
-    width: 60px;
-    height: 60px;
-    background: url(../images/icons8-toggle-off-96.png);
-    background-repeat: no-repeat;
-    background-size: 55px;
-    background-position: center;
-    cursor: pointer;
-}
-.toggle.active {
-    background: url(../images/icons8-toggle-on-96.png);
-    background-repeat: no-repeat;
-    background-size: 55px;
-    background-position: center;
-    cursor: pointer;
-}
 
 // Main showcase section
 .showcase {

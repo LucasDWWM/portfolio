@@ -27,7 +27,9 @@ const Header: React.FC<HeaderProps> = ({ logoText, toggleMenu, isActive }) => {
   return (
     <header>
       <h2 className="logo">{logoText}</h2>
-      <div className={`toggle ${isActive ? 'active' : ''}`} onClick={toggleMenu}></div>
+      <div className={`toggle ${isActive ? 'active' : ''}`} onClick={toggleMenu}>
+        {isActive ? '✖' : '☰'} {/* Affiche '✖' (X) quand actif, '☰' quand inactif */}
+      </div>
     </header>
   );
 };
