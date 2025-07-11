@@ -1,16 +1,101 @@
 import React from 'react';
-import '../styles/_projects.scss'
+import '../styles/_projects.scss';
+
+interface Project {
+  id: number;
+  title: string;
+  subtitle: string;
+  description: string;
+  imageUrl: string; // Chemin vers une image de prévisualisation (capture d'écran, logo, etc.)
+  liveLink?: string; // Lien vers le projet déployé (optionnel)
+  githubLink?: string; // Lien vers le dépôt GitHub (optionnel)
+  technologies: string[]; // Liste des technologies utilisées
+}
+
+const projects: Project[] = [
+  {
+    id: 1,
+    title: "Portfolio Gamifié (Ce site !)",
+    subtitle: "Démarquez-vous avec une expérience unique",
+    description: "Mon portfolio personnel, conçu pour présenter mes compétences en développement web de manière originale et interactive, inspirée par l'univers des jeux vidéo. Il utilise une vidéo de fond pour créer une immersion et une navigation fluide grâce à React Router.",
+    imageUrl: "/images/portfolio-preview.jpg", // Créez une image pour ça !
+    liveLink: "https://votre-domaine.com", // Mettez votre vrai domaine ici une fois déployé
+    githubLink: "https://github.com/LucasDWWM/my-portfolio", // Mettez le lien de votre dépôt réel
+    technologies: ["React", "TypeScript", "Bun", "TailwindCSS", "SCSS", "Vite", "React Router"],
+  },
+  {
+    id: 2,
+    title: "Site Vitrine avec le GRETA",
+    subtitle: "Projet de groupe pour une association",
+    description: "Développement d'un site web vitrine complet pour une association dans le cadre de ma formation avec le GRETA. Ce projet m'a permis de travailler en équipe et d'appliquer des principes de conception web pour un client réel.",
+    imageUrl: "/images/greta-project-preview.jpg", // Capture d'écran du site GRETA
+    technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"], // Technologies du projet GRETA
+  },
+  {
+    id: 3,
+    title: "Jeu : Tic Tac Toe 🎲",
+    subtitle: "Une implémentation amusante et interactive",
+    description: "Une version moderne du classique Tic Tac Toe, développée pour explorer les animations front-end et la logique de jeu. Ce projet met en avant ma capacité à créer des expériences utilisateur engageantes et réactives.",
+    imageUrl: "/images/tictactoe-preview.jpg", // Capture d'écran du jeu
+    technologies: ["Swift"],
+  },
+  // Ajoutez d'autres projets ici
+  // {
+  //   id: 4,
+  //   title: "Votre Prochain Projet...",
+  //   subtitle: "Montrez ce que vous avez appris et ce que vous pouvez faire",
+  //   description: "Description de votre nouveau projet, etc.",
+  //   imageUrl: "/images/new-project.jpg",
+  //   liveLink: "https://example.com/new-project",
+  //   githubLink: "https://github.com/LucasDWWM/new-project",
+  //   technologies: ["Next.js", "TypeScript", "GraphQL", "MongoDB"],
+  // },
+];
 
 const Projects: React.FC = () => {
   return (
-      <div className="text">
+    <div className="projects-container">
+      <div className="text-content">
         <h2>Mes</h2>
         <h3>Projets</h3>
-        <p>Voici un autre projet que j'ai créé, <br/>
-        Ces projets ont pour but de me démarquer des autres développeurs. </p>
-        <a href="video_web02.mp4">Un Site vitrine avec le <strong>GRETA</strong>.</a>
-        <a href="Tic TaC TOE LUCAS.mp4">Bande-Annonce</a>
+        <p>
+          Découvrez une sélection de mes réalisations. Chaque projet est une opportunité d'apprendre
+          et de mettre en œuvre des solutions créatives et performantes.
+          Mon objectif est de toujours me démarquer et de construire des expériences web uniques.
+        </p>
       </div>
+
+      <div className="projects-grid">
+        {projects.map((project) => (
+          <div key={project.id} className="project-card">
+            <img src={project.imageUrl} alt={`Preview de ${project.title}`} className="project-image" />
+            <div className="project-info">
+              <h4>{project.title}</h4>
+              <h5>{project.subtitle}</h5>
+              <p>{project.description}</p>
+              <div className="project-tech">
+                {project.technologies.map((tech, index) => (
+                  <span key={index} className="tech-tag">{tech}</span>
+                ))}
+              </div>
+              <div className="project-links">
+                {project.liveLink && (
+                  <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                    Voir le projet
+                  </a>
+                )}
+                {project.githubLink && (
+                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+                    Code Source
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 };
+
 export default Projects;

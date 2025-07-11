@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
-import '../styles/_contact.scss'
+import '../styles/_contact.scss';
 
 const Contact: React.FC = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('');
 
-// The provided query is a partial TypeScript function declaration for a form submission handler in React
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('Envoi en cours...');
 
     try {
-      const response = await fetch('/api/send-email', { // Nouvelle API endpoint
+      // Assurez-vous que votre API '/api/send-email'
+      const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -21,37 +21,46 @@ const Contact: React.FC = () => {
       });
 
       if (response.ok) {
-        setStatus('Merci, votre message a été envoyé !');
+        setStatus('Merci, votre message a été envoyé ! Je vous répondrai dans les plus brefs délais.');
         setEmail('');
         setMessage('');
       } else {
-        setStatus('Erreur lors de l\'envoi du message.');
+        const errorData = await response.json(); // Tenter de lire le message d'erreur du serveur
+        setStatus(`Erreur lors de l'envoi du message : ${errorData.message || 'Veuillez réessayer plus tard.'}`);
       }
     } catch (error) {
       console.error('Erreur:', error);
-      setStatus('Une erreur est survenue.');
+      setStatus('Une erreur est survenue lors de l\'envoi. Veuillez vérifier votre connexion ou réessayer.');
     }
   };
 
   return (
-      <div className="text">
+    <div className="contact-container">
+      <div className="text-content">
         <h2>Contactez-moi</h2>
-        <div className="formulaire">
-          <form onSubmit={handleSubmit}>
+        <p>
+          Que ce soit pour une opportunité d'emploi, une collaboration sur un projet, ou simplement pour échanger,
+          n'hésitez pas à me contacter. Je suis toujours ouvert aux nouvelles discussions !
+        </p>
+      </div>
+
+      <div className="contact-form-section">
+        <form onSubmit={handleSubmit} className="contact-form">
+          <div className="form-group">
             <label htmlFor="email">Votre Email :</label>
-            <br />
             <input
               type="email"
-              placeholder="Ex : example@gmail.com"
+              placeholder="Ex : exemple@gmail.com"
               id="email"
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
-            <br />
-            <label htmlFor="message">Message :</label>
-            <br />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="message">Votre Message :</label>
             <textarea
               id="message"
               name="message"
@@ -59,12 +68,31 @@ const Contact: React.FC = () => {
               onChange={(e) => setMessage(e.target.value)}
               required
             ></textarea>
-            <br />
-            <button type="submit">Envoyer le message</button>
-            {status && <p>{status}</p>} {/* Afficher le statut de l'envoi */}
-          </form>
+          </div>
+
+          <button type="submit" className="submit-btn">Envoyer le message</button>
+          {status && <p className="status-message">{status}</p>}
+        </form>
+
+        <div className="contact-info">
+          <h3>Informations Directes</h3>
+          <p>
+            <img src="/images/at-solid.svg" alt="Email Icon" className="icon" />
+            Email : <a href="mailto:lucaslipari06@gmail.com">votre.email@example.com</a>
+          </p>
+          <p>
+            <img src="/images/linkedin-brands.svg" alt="LinkedIn Icon" className="icon" />
+            LinkedIn : <a href="https://www.linkedin.com/in/lucas-lipari-868369233/" target="_blank" rel="noopener noreferrer">Linkedin</a>
+          </p>
+          <p>
+            <img src="/images/github-brands.svg" alt="GitHub Icon" className="icon" />
+            GitHub : <a href="https://github.com/LucasDWWM" target="_blank" rel="noopener noreferrer">GitHub</a>
+          </p>
+          {/* Ajoutez d'autres informations si pertinent, ex: numéro de téléphone */}
         </div>
       </div>
+    </div>
   );
 };
+
 export default Contact;

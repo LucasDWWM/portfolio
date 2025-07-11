@@ -1,0 +1,187 @@
+// src/styles/_contact.scss
+
+// Importez les variables ou mixins globaux si vous en avez
+// @import 'variables';
+// @import 'mixins';
+
+.contact-container {
+    position: relative; // Permet de positionner les éléments enfants par rapport à ce conteneur
+    z-index: 10; // Pour qu'il apparaisse au-dessus de la vidéo de fond et de l'overlay
+    max-width: 900px; // Largeur maximale du contenu du contact
+    margin: 80px auto 40px; // Centre le conteneur et ajoute de l'espace
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.95); // Fond légèrement transparent pour la légèreté
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); // Ombre légère
+    color: #333; // Couleur du texte général
+
+    @media (max-width: 991px) {
+        margin-top: 20px; // Moins de marge en haut sur mobile
+        padding: 20px;
+        max-width: 95%; // Prend plus de largeur sur les petits écrans
+    }
+}
+
+.text-content {
+    text-align: center;
+    margin-bottom: 40px;
+
+    h2 {
+        font-size: 3em;
+        font-weight: 700;
+        color: #03a9f4; // Couleur d'accentuation
+        margin-bottom: 10px;
+
+        @media (max-width: 991px) {
+            font-size: 2em;
+        }
+    }
+
+    p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #555;
+        max-width: 700px;
+        margin: 0 auto;
+
+        @media (max-width: 991px) {
+            font-size: 0.9em;
+        }
+    }
+}
+
+.contact-form-section {
+    display: flex;
+    gap: 40px; // Espacement entre le formulaire et les infos directes
+    justify-content: center;
+    align-items: flex-start; // Aligner en haut
+
+    @media (max-width: 768px) {
+        flex-direction: column; // Empiler les éléments sur mobile
+        gap: 30px;
+    }
+}
+
+.contact-form {
+    flex: 2; // Le formulaire prend plus de place
+    display: flex;
+    flex-direction: column;
+    gap: 20px; // Espacement entre les groupes de formulaire
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 1em;
+        }
+
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+            color: #333;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            box-sizing: border-box; // Inclut padding et border dans la largeur/hauteur
+
+            &:focus {
+                outline: none;
+                border-color: #03a9f4;
+                box-shadow: 0 0 0 3px rgba(3, 169, 244, 0.2);
+            }
+        }
+
+        textarea {
+            min-height: 120px; // Hauteur minimale pour le message
+            resize: vertical; // Permet de redimensionner verticalement
+        }
+    }
+
+    .submit-btn {
+        display: inline-block;
+        font-size: 1.1em;
+        background: #03a9f4; // Couleur primaire
+        color: #fff;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 6px;
+        text-transform: uppercase;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        align-self: flex-start; // Aligne le bouton à gauche dans la colonne
+
+        &:hover {
+            background-color: darken(#03a9f4, 10%);
+            transform: translateY(-2px); // Petit effet de soulèvement
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+
+    .status-message {
+        margin-top: 15px;
+        font-size: 0.95em;
+        text-align: center;
+        padding: 10px;
+        border-radius: 5px;
+
+        &.success {
+            color: #28a745; // Vert pour succès
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+        }
+
+        &.error {
+            color: #dc3545; // Rouge pour erreur
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+        }
+    }
+}
+
+.contact-info {
+    flex: 1; // Les infos directes prennent moins de place
+    background-color: #e0f2f7; // Fond plus clair pour la section info
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    h3 {
+        font-size: 1.5em;
+        color: #03a9f4;
+        margin-bottom: 20px;
+    }
+
+    p {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 1em;
+        color: #444;
+
+        .icon {
+            width: 24px; // Taille des icônes
+            height: 24px;
+            margin-right: 15px;
+            filter: invert(30%) sepia(80%) saturate(1000%) hue-rotate(180deg) brightness(80%) contrast(100%); /* Rend l'icône bleue */
+        }
+
+        a {
+            color: #03a9f4;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
