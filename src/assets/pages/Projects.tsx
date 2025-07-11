@@ -67,8 +67,7 @@ const Projects: React.FC = () => {
   return (
     <div className="projects-container">
       <div className="text-content">
-        <h2>Mes</h2>
-        <h3>Projets</h3>
+        <h1>Mes Projets</h1>
         <p>
           Découvrez une sélection de mes réalisations. Chaque projet est une opportunité d'apprendre
           et de mettre en œuvre des solutions créatives et performantes.
