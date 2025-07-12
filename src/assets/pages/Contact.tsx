@@ -50,7 +50,7 @@ const Contact: React.FC = () => {
             <label htmlFor="email">Votre Email :</label>
             <input
               type="email"
-              placeholder="Ex : exemple@gmail.com"
+              placeholder="Ex : votreAdresse@Email.com"
               id="email"
               name="email"
               value={email}
@@ -78,15 +78,15 @@ const Contact: React.FC = () => {
           <h3>Informations Directes</h3>
           <p>
             <img src="/images/at-solid.svg" alt="Email Icon" className="icon" />
-            Email : <a href="mailto:lucaslipari06@gmail.com"> lucasapple06@gmail.com</a>
+            <a href="mailto:lucaslipari06@gmail.com">lucasapple06@gmail.com</a>
           </p>
           <p>
             <img src="/images/linkedin-brands.svg" alt="LinkedIn Icon" className="icon" />
-            LinkedIn : <a href="https://www.linkedin.com/in/lucas-lipari-868369233/" target="_blank" rel="noopener noreferrer"> Linkedin</a>
+            <a href="https://www.linkedin.com/in/lucas-lipari-868369233/" target="_blank" rel="noopener noreferrer"> Linkedin</a>
           </p>
           <p>
             <img src="/images/github-brands.svg" alt="GitHub Icon" className="icon" />
-            GitHub : <a href="https://github.com/LucasDWWM" target="_blank" rel="noopener noreferrer"> GitHub</a>
+            <a href="https://github.com/LucasDWWM" target="_blank" rel="noopener noreferrer"> GitHub</a>
           </p>
         </div>
       </div>

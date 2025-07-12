@@ -3,7 +3,8 @@
     z-index: 10; // Pour qu'il apparaisse au-dessus de la vidéo de fond et de l'overlay
     max-width: 900px; // Largeur maximale du contenu du contact
     margin: 80px auto 40px; // Centre le conteneur et ajoute de l'espace
-    padding: 40px;
+    margin-right: 28em;
+    padding: 50px;
     background-color: rgba(255, 255, 255, 0.95); // Fond légèrement transparent pour la légèreté
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); // Ombre légère
@@ -19,6 +20,7 @@
 .text-content {
     text-align: center;
     margin-bottom: 40px;
+    font-size: .9em;
 
     h2 {
         font-size: 3em;
