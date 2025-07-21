@@ -29,6 +29,8 @@ const Layout: React.FC<LayoutProps> = ({ children, pageTitle }) => {
           toggleMenu={toggleMenu}
           isActive={isActive}
         />
+        
+        {/* Vidéo en arrière-plan */}
         <video
           className="absolute inset-0 w-full h-full object-cover opacity-80 z-0 video-background-adjusted"
           src="/videos/video_web.mp4"
@@ -36,12 +38,16 @@ const Layout: React.FC<LayoutProps> = ({ children, pageTitle }) => {
           loop
           autoPlay
         />
-        <div className="absolute inset-0 bg-black/70 z-10" />
-        <div className="relative z-20">{children}</div>
-        <SocialLinks />
-      </section>
+        
+        {/* Contenu visible */}
+        <div className="relative z-20">
+          {children}
+          <SocialLinks />
+        </div>
 
-      <Menu isActive={isActive} toggleMenu={toggleMenu} />
+        {/* Menu mis dans la section */}
+        <Menu isActive={isActive} toggleMenu={toggleMenu} />
+      </section>
     </>
   )
 }

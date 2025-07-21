@@ -1,4 +1,3 @@
-// src/components/Menu.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/_menu.scss';
@@ -17,30 +16,24 @@ const Menu: React.FC<Props> = ({ isActive, toggleMenu }) => {
         transform transition-transform duration-500 ease-in-out
         ${isActive ? 'translate-x-0' : 'translate-x-full'}
       `}>
-      <ul className="p-6 space-y-4"> {/* Ajoutez du padding et de l'espacement avec Tailwind */}
-        {[
-          { to: '/', label: 'Accueil' },
-          { to: '/projets', label: 'Mes projets' },
-          { to: '/contact', label: 'Contact' },
-        ].map((link) => (
-          <li key={link.to}>
-            <Link
-              to={link.to}
-              onClick={toggleMenu} // Ferme le menu au clic sur un lien
-              className="text-gray-800 hover:text-blue-500 text-xl block py-2" // Styles pour les liens
-            >
-              {link.label}
-            </Link>
-          </li>
-        ))}
+      <ul className="p-8 space-y-6">
         <li>
-          <a
-            href="/pdf/CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={toggleMenu}
-            className="text-gray-800 hover:text-blue-500 text-xl block py-2"
-          >
+          <Link to="/" onClick={toggleMenu} className="text-white text-2xl font-bold tracking-wide hover:text-cyan-400 transition">
+            Accueil
+          </Link>
+        </li>
+        <li>
+          <Link to="/projets" onClick={toggleMenu} className="text-white text-2xl font-bold tracking-wide hover:text-cyan-400 transition">
+            Mes projets
+          </Link>
+        </li>
+        <li>
+          <Link to="/contact" onClick={toggleMenu} className="text-white text-2xl font-bold tracking-wide hover:text-cyan-400 transition">
+            Contact
+          </Link>
+        </li>
+        <li>
+          <a href="/pdf/CV.pdf" target="_blank" rel="noopener noreferrer" onClick={toggleMenu} className="text-white text-2xl font-bold tracking-wide hover:text-cyan-400 transition">
             Télécharger mon CV
           </a>
         </li>
