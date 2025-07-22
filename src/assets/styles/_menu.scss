@@ -19,22 +19,23 @@
     background: none;
 }
 
+
 .menu {
     position: fixed;
     top: 0;
     right: 0;
     width: 300px;
     height: 100%;
-    background-color: #f2f2f2;
+    background-color: #fff; // Fond blanc pour le menu
     z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: transform 0.5s ease-in-out;
-    transform: translateX(100%);
+    transform: translateX(100%); // Cache le menu par défaut
 
     &.active {
-        transform: translateX(0);
+        transform: translateX(0); // Fait apparaître le menu
     }
 
     ul {
@@ -50,7 +51,7 @@
     a {
         text-decoration: none;
         font-size: 24px;
-        color: #111;
+        color: #111; // Texte gris très foncé
         transition: 0.2s;
         &:hover {
             color: #0d80b6;

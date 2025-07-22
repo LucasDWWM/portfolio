@@ -10,30 +10,26 @@ interface Props {
 const Menu: React.FC<Props> = ({ isActive, toggleMenu }) => {
   return (
     <div
-      className={`
-        menu
-        fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-40
-        transform transition-transform duration-500 ease-in-out
-        ${isActive ? 'translate-x-0' : 'translate-x-full'}
-      `}>
+      className={`menu ${isActive ? 'active' : ''}`}
+    >
       <ul className="p-8 space-y-6">
         <li>
-          <Link to="/" onClick={toggleMenu} className="text-white text-2xl font-bold tracking-wide hover:text-cyan-400 transition">
+          <Link to="/" onClick={toggleMenu} className="text-2xl font-bold tracking-wide hover:text-cyan-400 transition">
             Accueil
           </Link>
         </li>
         <li>
-          <Link to="/projets" onClick={toggleMenu} className="text-white text-2xl font-bold tracking-wide hover:text-cyan-400 transition">
-            Mes projets
+          <Link to="/projets" onClick={toggleMenu} className="text-2xl font-bold tracking-wide hover:text-cyan-400 transition">
+            Projets
           </Link>
         </li>
         <li>
-          <Link to="/contact" onClick={toggleMenu} className="text-white text-2xl font-bold tracking-wide hover:text-cyan-400 transition">
+          <Link to="/contact" onClick={toggleMenu} className="text-2xl font-bold tracking-wide hover:text-cyan-400 transition">
             Contact
           </Link>
         </li>
         <li>
-          <a href="/pdf/CV.pdf" target="_blank" rel="noopener noreferrer" onClick={toggleMenu} className="text-white text-2xl font-bold tracking-wide hover:text-cyan-400 transition">
+          <a href="/pdf/CV.pdf" target="_blank" rel="noopener noreferrer" onClick={toggleMenu} className="text-2xl font-bold tracking-wide hover:text-cyan-400 transition">
             Télécharger mon CV
           </a>
         </li>
