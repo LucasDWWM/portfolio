@@ -18,8 +18,8 @@ const projects: Project[] = [
     title: "Portfolio Gamifié (Ce site !)",
     subtitle: "Démarquez-vous avec une expérience unique",
     description: "Mon portfolio personnel, conçu pour présenter mes compétences en développement web de manière originale et interactive, inspirée par l'univers des jeux vidéo. Il utilise une vidéo de fond pour créer une immersion et une navigation fluide grâce à React Router.",
-    imageUrl: "/images/portfolio-preview.png", // Créez une image pour ça !
-    githubLink: "https://github.com/LucasDWWM/portfolio", // Mettez le lien de votre dépôt réel
+    imageUrl: "/images/portfolio-preview.png", // Capture d'écran du portfolio
+    githubLink: "https://github.com/LucasDWWM/portfolio", // lien vers le dépôt GitHub
     technologies: ["React", "TypeScript", "Bun", "TailwindCSS", "SCSS", "Vite", "React Router"],
   },
   {
@@ -46,21 +46,9 @@ const projects: Project[] = [
     description: "On accueille des personnes en fin de peine pour les aider à préparer leur retour à la vie en société. Pendant 6 à 12 mois, les résidents vivent dans un cadre paisible, humain et structurant. Ils retrouvent un quotidien simple : des repas partagés, des discussions, des activités collectives. C’est un temps pour se poser, se reconnecter, réapprendre à vivre avec les autres.",
     imageUrl: "/images/terre-d-Espoir-preview.png", // Capture d'écran du jeu
     liveLink: "https://lucasdwwm.github.io/terre_d_espoir/",
-    githubLink: "https://github.com/LucasDWWM/terre_d_espoir", // Mettez le lien de votre dépôt réel
+    githubLink: "https://github.com/LucasDWWM/terre_d_espoir", // lien vers le dépôt GitHub
     technologies: ["HTML", "CSS" , "Javascript"],
   },
-
-  // Ajoutez d'autres projets ici
-  // {
-  //   id: 4,
-  //   title: "Votre Prochain Projet...",
-  //   subtitle: "Montrez ce que vous avez appris et ce que vous pouvez faire",
-  //   description: "Description de votre nouveau projet, etc.",
-  //   imageUrl: "/images/new-project.jpg",
-  //   liveLink: "https://example.com/new-project",
-  //   githubLink: "https://github.com/LucasDWWM/new-project",
-  //   technologies: ["Next.js", "TypeScript", "GraphQL", "MongoDB"],
-  // },
 ];
 
 const Projects: React.FC = () => {
