@@ -20,7 +20,7 @@ const Menu: React.FC<Props> = ({ isActive, toggleMenu }) => {
         </li>
         <li>
           <Link to="/projets" onClick={toggleMenu} className="text-2xl font-bold tracking-wide hover:text-cyan-400 transition">
-            Projets
+            Mes Projets
           </Link>
         </li>
         <li>
