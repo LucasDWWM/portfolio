@@ -50,7 +50,7 @@ const Contact: React.FC = () => {
             <label htmlFor="email">Votre Email :</label>
             <input
               type="email"
-              placeholder="Ex : votreAdresse@Email.com"
+              placeholder="Votre email : "
               id="email"
               name="email"
               value={email}
