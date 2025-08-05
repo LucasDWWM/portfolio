@@ -13,14 +13,14 @@ type Project = {
 const projects: Project[] = [
   {
     title: "Portfolio Gamifié",
-    description: "Mon portfolio personnel, conçu pour présenter mes compétences en développement web de manière originale et interactive, inspirée par l'univers des jeux vidéo. Il utilise une vidéo de fond pour créer une immersion et une navigation fluide grâce à React Router.",
+    description: "Mon portfolio personnel, conçu pour présenter mes compétences en développement web de manière originale et interactive.",
     techs: ["React", "TypeScript", "SCSS"],
     image: "/images/portfolio-preview.png",
     github: "https://github.com/LucasDWWM/portfolio",
   },
   {
     title: "Site Vitrine GRETA",
-    description: "Développement d'un site web vitrine complet pour une association dans le cadre de ma formation avec le GRETA. Ce projet m'a permis de travailler en équipe et d'appliquer des principes de conception web pour un client réel.",
+    description: "Développement d'un site web vitrine complet pour le GRETA",
     techs: ["HTML", "CSS"],
     image: "/images/greta-project-preview.png",
   },
@@ -32,7 +32,7 @@ const projects: Project[] = [
   },
   {
     title: "Terre d'Espoir",
-    description: "On accueille des personnes en fin de peine pour les aider à préparer leur retour à la vie en société. Pendant 6 à 12 mois, les résidents vivent dans un cadre paisible, humain et structurant. Ils retrouvent un quotidien simple : des repas partagés, des discussions, des activités collectives. C’est un temps pour se poser, se reconnecter, réapprendre à vivre avec les autres.",
+    description: "Site web pour l'association Terre d'Espoir.Il présente les actions de l'association et permet aux visiteurs de s'engager.",
     image: "/images/terre-d-Espoir-preview.png",
     live: "https://lucasdwwm.github.io/terre_d_espoir/",
     github: "https://github.com/LucasDWWM/terre_d_espoir",
@@ -104,6 +104,12 @@ const Projects: React.FC = () => {
         <div className="carousel-controls">
           <button className="btn-control prev" onClick={prevSlide}>&lt;</button>
           <button className="btn-control next" onClick={nextSlide}>&gt;</button>
+        </div>
+        {/* Pagination Dots */}
+        <div className="carousel-pagination">
+          {projects.map((_, i) => (
+            <span key={i} className={`dot ${i === active ? 'active' : ''}`}></span>
+          ))}
         </div>
       </div>
     </section>
