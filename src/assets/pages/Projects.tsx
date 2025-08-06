@@ -14,21 +14,24 @@ const projects: Project[] = [
   {
     title: "Portfolio Gamifié",
     description: "Mon portfolio personnel, conçu pour présenter mes compétences en développement web de manière originale et interactive.",
-    techs: ["React", "TypeScript", "SCSS"],
     image: "/images/portfolio-preview.png",
     github: "https://github.com/LucasDWWM/portfolio",
+    techs: ["React", "TypeScript", "SCSS"],
   },
   {
-    title: "Site Vitrine GRETA",
-    description: "Développement d'un site web vitrine complet pour le GRETA",
-    techs: ["HTML", "CSS"],
-    image: "/images/greta-project-preview.png",
+    title: "Site Vitrine Sophie Bluel",
+    description: "Développement d'un site vitrine pour une artiste, mettant en avant son travail et ses créations.",
+    image: "/images/sophie_bluel-preview.png",
+    live: "https://lucasdwwm.github.io/sophie_bluel/",
+    github: "https://github.com/LucasDWWM/sophie_bluel",
+    techs: ["HTML", "CSS" , "Javascript"],
   },
   {
     title: "Jeu : Tic Tac Toe",
     description: "Un mini-jeu développé en Swift avec animations.",
-    techs: ["Swift"],
     image: "/images/tictactoe-preview.png",
+    github: "https://github.com/LucasDWWM/TicTacToe",
+    techs: ["Swift"],
   },
   {
     title: "Terre d'Espoir",
@@ -36,6 +39,28 @@ const projects: Project[] = [
     image: "/images/terre-d-Espoir-preview.png",
     live: "https://lucasdwwm.github.io/terre_d_espoir/",
     github: "https://github.com/LucasDWWM/terre_d_espoir",
+    techs: ["HTML", "CSS", "Javascript"],
+  },
+  {
+    title: "Oh My Food",
+    description: "Site web pour un restaurant fictif, mettant en avant un design moderne et une expérience utilisateur fluide.",
+    image: "/images/Ohmyfood_preview.png",
+    live: "https://lucasdwwm.github.io/ohmyfood/",
+    github: "https://github.com/LucasDWWM/ohmyfood",
+    techs: ["HTML", "CSS", "Javascript"],
+  },
+  {
+    title: "Kasa",
+    description: "Site web pour une agence de location immobilière, avec un design épuré et une navigation intuitive.",
+    image: "/images/kasa_preview.png",
+    github: "https://github.com/LucasDWWM/kasa",
+    techs: ["React", "SCSS"],
+  },
+  {
+    title: "724 events",
+    description: "Site web pour des événements, mettant en avant les fonctionnalités d'inscription et de gestion des événements.",
+    image: "/images/724events-preview.png",
+    github: "https://github.com/LucasDWWM/Debug_P9",
     techs: ["HTML", "CSS", "Javascript"],
   },
 ];
@@ -94,7 +119,7 @@ const Projects: React.FC = () => {
                   {proj.techs.map((t, idx) => <span key={idx}>{t}</span>)}
                 </div>
                 <div className="buttons-links">
-                  {proj.live && <a href={proj.live} target="_blank" rel="noopener noreferrer" className="btn live">🌐 Voir</a>}
+                  {proj.live && <a href={proj.live} target="_blank" rel="noopener noreferrer" className="btn live">🌐 Site</a>}
                   {proj.github && <a href={proj.github} target="_blank" rel="noopener noreferrer" className="btn github">💻 Code</a>}
                 </div>
               </div>

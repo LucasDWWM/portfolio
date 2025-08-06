@@ -1,0 +1,54 @@
+
+.legal-mentions-container {
+  color: #fff;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+
+  h2, h3 {
+    color: #fff;
+  }
+
+  a {
+    color: #1e90ff;
+    text-decoration: underline;
+
+    &:hover {
+      color: #63b3ed;
+    }
+  }
+
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+}
+
+.legal-links {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10000;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+  }
+}

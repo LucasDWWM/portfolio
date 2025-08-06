@@ -4,6 +4,7 @@ import Header from './Header'
 import Menu from './Menu'
 import SocialLinks from './SocialLinks'
 import '../styles/_layout.scss';
+import LegalLinks from './LegalLinks';
 
 interface LayoutProps {
   children: React.ReactNode
@@ -43,6 +44,7 @@ const Layout: React.FC<LayoutProps> = ({ children, pageTitle }) => {
         <div className="relative z-20">
           {children}
           <SocialLinks />
+          <LegalLinks />
         </div>
 
         {/* Menu mis dans la section */}
