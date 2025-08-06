@@ -112,9 +112,16 @@ const Projects: React.FC = () => {
                 style={{ backgroundImage: `url(${proj.image})` }}
                 key={i}
               >
+              {/* Titre et description du projet visible uniquement sur la slide active */}
+              {i === active && (
+                <div className="project-header">
+                  <h3>{proj.title}</h3>
+                  <p>{proj.description}</p>
+                </div>
+              )}
+
+              {/* Contenu projet technique spécifique */}
               <div className="project-content">
-                <h3>{proj.title}</h3>
-                <p>{proj.description}</p>
                 <div className="techs">
                   {proj.techs.map((t, idx) => <span key={idx}>{t}</span>)}
                 </div>

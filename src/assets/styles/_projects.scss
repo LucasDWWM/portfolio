@@ -103,6 +103,35 @@
   }
 }
 
+.project-header {
+  position: absolute;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  border-radius: 15px;
+  color: #fff;
+  text-align: left;
+  z-index: 5;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+
+  h3 {
+    font-size: 1.6em;
+    margin-bottom: 8px;
+  }
+
+  p {
+    font-size: 1em;
+    margin: 0;
+    line-height: 1.4;
+  }
+}
+
+
 .carousel-controls {
   position: absolute;
   bottom: 30px;
@@ -131,15 +160,6 @@
 }
 
 .project-content {
-  h3 {
-    font-size: 2em;
-    margin-bottom: 10px;
-  }
-  p {
-    font-size: 1em;
-    line-height: 1.4;
-    margin-bottom: 15px;
-  }
   .techs {
     display: flex;
     flex-wrap: wrap;
