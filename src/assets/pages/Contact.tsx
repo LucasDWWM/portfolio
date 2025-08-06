@@ -11,15 +11,14 @@ const Contact: React.FC = () => {
     setStatus('Envoi en cours...');
 
     try {
-      // Assurez-vous que votre API '/api/send-email'
-      const response = await fetch('/api/send-email', {
+      // Envoi du formulaire via fetch'
+      const response = await fetch('/send-email.php', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify({ email, message }),
+        body: new URLSearchParams({ email, message }).toString(),
       });
-
       if (response.ok) {
         setStatus('Merci, votre message a été envoyé ! Je vous répondrai dans les plus brefs délais.');
         setEmail('');
