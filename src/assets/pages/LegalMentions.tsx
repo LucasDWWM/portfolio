@@ -9,7 +9,8 @@ const LegalMentions = () => {
         <h3>ÉDITEUR DU SITE</h3>
         <p>Nom : Lucas Lipari</p>
         <p>Adresse : 06110 Grasse, France</p>
-        <p> Contact :{' '} <a href="/contact" aria-label="Formulaire de contact">Me contacter</a></p>
+        <p>Contact : <a href="mailto:lucaslipari06@gmail.com">lucaslipari06@gmail.com</a></p>
+
       </section>
 
       <section>
