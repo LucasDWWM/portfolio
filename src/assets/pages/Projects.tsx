@@ -63,6 +63,14 @@ const projects: Project[] = [
     github: "https://github.com/LucasDWWM/Debug_P9",
     techs: ["HTML", "CSS", "Javascript"],
   },
+    {
+    title: "Convertisseur d'Image en Art ASCII",
+    description: "Site web permettant de convertir des images en art ASCII.",
+    image: "/images/convertASCII_preview.png",
+    live: "https://lucasdwwm.github.io/Convertisseur-d-Image-en-Art-ASCII/",
+    github: "https://github.com/LucasDWWM/Convertisseur-d-Image-en-Art-ASCII",
+    techs: ["HTML", "CSS", "Javascript"],
+  },
 ];
 
 const Projects: React.FC = () => {
