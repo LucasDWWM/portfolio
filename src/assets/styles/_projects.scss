@@ -203,3 +203,62 @@
   position: relative;
   z-index: 4;
 }
+
+@media (max-width: 768px) {
+    .projects-carousel-section {
+        margin-left: 0; /* Supprime la marge de 30vh */
+        padding: 20px; /* Ajoute un padding pour l'espace */
+    }
+
+    .carousel-container {
+        height: auto; /* Hauteur automatique */
+        padding-bottom: 40px;
+    }
+    
+    .slide-items {
+        width: 100vw; /* Utilise 100% de la largeur du viewport */
+        flex-direction: column; /* Empile les éléments pour un affichage plus simple sur mobile */
+        align-items: center;
+        gap: 20px; /* Espacement entre les projets empilés */
+    }
+
+    .carousel-item {
+        position: static; /* Position statique pour un affichage en colonne */
+        transform: none; /* Supprime la transformation pour le positionnement */
+        opacity: 1; /* Rends tous les éléments visibles */
+        width: 90%; /* Largeur de 90% du conteneur parent */
+        max-width: 400px; /* Limite la largeur pour les grands mobiles */
+        height: 300px; /* Hauteur fixe pour que l'image soit visible */
+        margin-bottom: 20px;
+
+        &.active, &.prev, &.next {
+            transform: none;
+            opacity: 1;
+        }
+
+        .project-content {
+            opacity: 1; /* Rends le contenu toujours visible */
+            pointer-events: auto;
+            position: absolute;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        }
+    }
+    
+    .project-header {
+        position: static;
+        transform: none;
+        width: 100%;
+        margin-top: -30px; /* Un petit décalage pour chevaucher l'image */
+        background-color: rgba(0, 0, 0, 0.6);
+        text-align: left;
+    }
+
+    .carousel-controls {
+        display: none; /* Cache les contrôles pour un affichage en scroll vertical */
+    }
+    
+    .carousel-pagination {
+        display: none;
+    }
+}

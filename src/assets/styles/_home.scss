@@ -7,13 +7,17 @@
     font-family: 'Poppins', sans-serif;
 }
 
+body {
+    overflow-x: hidden; /* C'est l'ajustement qui résout le problème de la bande blanche */
+}
+
 header {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     padding: 40px 100px;
-    z-index: 1000; /* Ensure header is on top */
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,7 +27,6 @@ header .logo {
     text-transform: uppercase;
     cursor: pointer;
 }
-
 
 // Main showcase section
 .showcase {
@@ -39,7 +42,6 @@ header .logo {
     transition: 0.5s;
     z-index: 2;
 }
-
 
 .showcase.active {
     right: 300px; 
@@ -62,12 +64,12 @@ header .logo {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #03a9f4; /* Blue overlay */
+    background: #03a9f4;
     mix-blend-mode: overlay;
     z-index: 1;
 }
 
-// Text content styles (from your Home.tsx)
+// Text content styles
 .home-text-content {
     position: relative;
     z-index: 10;
@@ -134,9 +136,9 @@ header .logo {
     transition: 0.5s;
 }
 .social li a img {
-    filter: invert(1); /* Make icons white */
-    transform: scale(0.5); /* Scale down icons */
-    margin-right: 5px; /* Space between icon and text */
+    filter: invert(1);
+    transform: scale(0.5);
+    margin-right: 5px;
     transition: inherit;
 }
 .social li a:hover {
@@ -162,7 +164,7 @@ header .logo {
     transform: translateX(100%);
 }
 .menu.active {
-    transform: translateX(0); /* Slide in */
+    transform: translateX(0);
 }
 .menu ul {
     position: relative;
@@ -320,19 +322,27 @@ header .logo {
 @media (max-width: 991px) {
     .showcase,
     .showcase header {
-        padding: 40px;
+        padding: 20px;
     }
-    .home-text-content h1 {
-        font-size: 3em;
-    }
-    .home-text-content h2 {
-        font-size: 2em;
+    .home-text-content {
+        margin-right: 0;
+        padding: 0 20px;
+        text-align: center;
+        h1 {
+            font-size: 2.5em;
+        }
+        h2 {
+            font-size: 1.8em;
+        }
+        p {
+            font-size: 1em;
+        }
     }
     .social {
-        left: 40px;
+        left: 20px;
     }
     .settings-icon {
-        right: 40px;
+        right: 20px;
     }
     .settings-popup {
         width: 90%;
