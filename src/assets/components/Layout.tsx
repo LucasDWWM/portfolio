@@ -32,6 +32,9 @@ const Layout: React.FC<LayoutProps> = ({ children, pageTitle }) => {
         
         {/* Vidéo en arrière-plan */}
         <video
+          // absolute inset-0 w-full ça veut dire que la vidéo prend toute la place de son conteneur 
+          // w-full h-full veut dire que la vidéo prend toute la largeur et toute la hauteur de son conteneur
+          // object-cover opacity-80 veut dire que la vidéo couvre tout l'espace disponible avec une opacité de 80%
           className="absolute inset-0 w-full h-full object-cover opacity-80 z-0 video-background-adjusted"
           src="/videos/video_web.mp4"
           muted

@@ -15,7 +15,9 @@
   color: #fff;
 
   @media (max-width: 768px) {
+    margin-top: 35px;
     font-size: 2em;
+    padding-top: 20px;
   }
 }
 
@@ -131,7 +133,6 @@
   }
 }
 
-
 .carousel-controls {
   position: absolute;
   bottom: 30px;
@@ -204,44 +205,60 @@
   z-index: 4;
 }
 
+// Media queries pour mobile
 @media (max-width: 768px) {
     .projects-carousel-section {
-        margin-left: 0; /* Supprime la marge de 30vh */
-        padding: 20px; /* Ajoute un padding pour l'espace */
+        margin-left: 0; 
+        padding: 20px; 
+        background-color: transparent;
+        min-height: auto; 
+        padding-top: 0; // AJOUT: S'assurer qu'il n'y a pas de padding-top
     }
 
     .carousel-container {
-        height: auto; /* Hauteur automatique */
-        padding-bottom: 40px;
+        height: auto;
+        padding-bottom: 20px; 
+        max-width: 100%; 
+        overflow: visible; 
     }
     
     .slide-items {
-        width: 100vw; /* Utilise 100% de la largeur du viewport */
-        flex-direction: column; /* Empile les éléments pour un affichage plus simple sur mobile */
+        width: 100%; 
+        flex-direction: column;
         align-items: center;
-        gap: 20px; /* Espacement entre les projets empilés */
+        gap: 30px; 
+        height: auto;
     }
 
     .carousel-item {
-        position: static; /* Position statique pour un affichage en colonne */
-        transform: none; /* Supprime la transformation pour le positionnement */
-        opacity: 1; /* Rends tous les éléments visibles */
-        width: 90%; /* Largeur de 90% du conteneur parent */
-        max-width: 400px; /* Limite la largeur pour les grands mobiles */
-        height: 300px; /* Hauteur fixe pour que l'image soit visible */
-        margin-bottom: 20px;
+        position: static;
+        transform: none; 
+        opacity: 1; 
+        width: 100%;
+        max-width: 350px;
+        height: 250px;
+        margin-bottom: 0;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
 
         &.active, &.prev, &.next {
             transform: none;
             opacity: 1;
+            width: 100%;
+            max-width: 350px;
+            height: 250px;
+            z-index: auto;
         }
 
         .project-content {
-            opacity: 1; /* Rends le contenu toujours visible */
             pointer-events: auto;
             position: absolute;
             bottom: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            padding: 15px;
         }
     }
     
@@ -249,16 +266,49 @@
         position: static;
         transform: none;
         width: 100%;
-        margin-top: -30px; /* Un petit décalage pour chevaucher l'image */
-        background-color: rgba(0, 0, 0, 0.6);
+        max-width: 350px;
+        margin: 0 auto 15px auto;
+        background-color: rgba(0, 0, 0, 0.8);
         text-align: left;
+        border-radius: 10px;
+        backdrop-filter: blur(8px);
+        
+        h3 {
+            font-size: 1.3em;
+            margin-bottom: 8px;
+        }
+        
+        p {
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
     }
 
     .carousel-controls {
-        display: none; /* Cache les contrôles pour un affichage en scroll vertical */
+        display: none;
     }
     
     .carousel-pagination {
         display: none;
+    }
+
+    .project-content {
+        .techs {
+            margin-bottom: 12px;
+            
+            span {
+                font-size: 0.7em;
+                padding: 4px 8px;
+            }
+        }
+        
+        .buttons-links {
+            gap: 10px;
+            
+            .btn {
+                padding: 8px 15px;
+                font-size: 0.85em;
+            }
+        }
     }
 }

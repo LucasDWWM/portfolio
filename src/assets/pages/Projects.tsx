@@ -63,7 +63,7 @@ const projects: Project[] = [
     github: "https://github.com/LucasDWWM/Debug_P9",
     techs: ["HTML", "CSS", "Javascript"],
   },
-    {
+  {
     title: "Convertisseur d'Image en Art ASCII",
     description: "Site web permettant de convertir des images en art ASCII.",
     image: "/images/convertASCII_preview.png",
@@ -74,9 +74,22 @@ const projects: Project[] = [
 ];
 
 const Projects: React.FC = () => {
-  const [active, setActive] = useState(0); // Index du projet actif
+  const [active, setActive] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const totalProjects = projects.length;
+
+  // Détection mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const nextSlide = () => {
     if (isTransitioning) return;
@@ -90,12 +103,11 @@ const Projects: React.FC = () => {
     setActive((prevActive) => (prevActive - 1 + totalProjects) % totalProjects);
   };
 
-  // Met fin à la transition après un court délai pour permettre une nouvelle animation
   useEffect(() => {
     if (isTransitioning) {
       const timer = setTimeout(() => {
         setIsTransitioning(false);
-      }, 500); // Durée de la transition CSS
+      }, 500);
       return () => clearTimeout(timer);
     }
   }, [isTransitioning]);
@@ -108,49 +120,74 @@ const Projects: React.FC = () => {
       <div className="carousel-container">
         <div className="slide-items">
           {projects.map((proj, i) => (
-            <div className={`carousel-item ${
-                i === active
-                  ? 'active'
-                  : i === (active - 1 + totalProjects) % totalProjects
-                  ? 'prev'
-                  : i === (active + 1) % totalProjects
-                  ? 'next'
-                  : ''
-                }`}
-                style={{ backgroundImage: `url(${proj.image})` }}
-                key={i}
-              >
-              {/* Titre et description du projet visible uniquement sur la slide active */}
-              {i === active && (
+            <div key={i}>
+              {/* En mobile, afficher le header avant l'image */}
+              {isMobile && (
                 <div className="project-header">
                   <h3>{proj.title}</h3>
                   <p>{proj.description}</p>
                 </div>
               )}
+              
+              <div 
+                className={`carousel-item ${
+                  isMobile 
+                    ? ''
+                    : i === active
+                    ? 'active'
+                    : i === (active - 1 + totalProjects) % totalProjects
+                    ? 'prev'
+                    : i === (active + 1) % totalProjects
+                    ? 'next'
+                    : ''
+                }`}
+                style={{ backgroundImage: `url(${proj.image})` }}
+              >
+                {/* Header visible uniquement sur desktop pour la slide active */}
+                {!isMobile && i === active && (
+                  <div className="project-header">
+                    <h3>{proj.title}</h3>
+                    <p>{proj.description}</p>
+                  </div>
+                )}
 
-              {/* Contenu projet technique spécifique */}
-              <div className="project-content">
-                <div className="techs">
-                  {proj.techs.map((t, idx) => <span key={idx}>{t}</span>)}
-                </div>
-                <div className="buttons-links">
-                  {proj.live && <a href={proj.live} target="_blank" rel="noopener noreferrer" className="btn live">🌐 Site</a>}
-                  {proj.github && <a href={proj.github} target="_blank" rel="noopener noreferrer" className="btn github">💻 Code</a>}
+                {/* Contenu technique */}
+                <div className="project-content">
+                  <div className="techs">
+                    {proj.techs.map((t, idx) => <span key={idx}>{t}</span>)}
+                  </div>
+                  <div className="buttons-links">
+                    {proj.live && (
+                      <a href={proj.live} target="_blank" rel="noopener noreferrer" className="btn live">
+                        🌐 Site
+                      </a>
+                    )}
+                    {proj.github && (
+                      <a href={proj.github} target="_blank" rel="noopener noreferrer" className="btn github">
+                        💻 Code
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <div className="carousel-controls">
-          <button className="btn-control prev" onClick={prevSlide}>&lt;</button>
-          <button className="btn-control next" onClick={nextSlide}>&gt;</button>
-        </div>
-        {/* Pagination Dots */}
-        <div className="carousel-pagination">
-          {projects.map((_, i) => (
-            <span key={i} className={`dot ${i === active ? 'active' : ''}`}></span>
-          ))}
-        </div>
+        
+        {/* Contrôles visibles uniquement sur desktop */}
+        {!isMobile && (
+          <>
+            <div className="carousel-controls">
+              <button className="btn-control prev" onClick={prevSlide}>&lt;</button>
+              <button className="btn-control next" onClick={nextSlide}>&gt;</button>
+            </div>
+            <div className="carousel-pagination">
+              {projects.map((_, i) => (
+                <span key={i} className={`dot ${i === active ? 'active' : ''}`}></span>
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </section>
   );

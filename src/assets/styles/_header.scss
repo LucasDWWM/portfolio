@@ -14,4 +14,41 @@ header {
         text-transform: uppercase;
         cursor: pointer;
     }
+
+    // Version desktop large
+    @media (max-width: 1200px) {
+        padding: 35px 80px;
+    }
+
+    // Tablette large
+    @media (max-width: 1024px) {
+        padding: 30px 60px;
+    }
+
+    // Tablette
+    @media (max-width: 991px) {
+        padding: 25px 40px;
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+    // Tablette petite
+    @media (max-width: 768px) {
+        padding: 20px 30px;
+    }
+
+    // Mobile large
+    @media (max-width: 600px) {
+        padding: 18px 20px;
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    // Mobile
+    @media (max-width: 480px) {
+        padding: 15px 15px;
+    }
+
+    // Très petit mobile
+    @media (max-width: 360px) {
+        padding: 12px 10px;
+    }
 }
