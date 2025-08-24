@@ -7,11 +7,41 @@
   object-fit: cover;
   object-position: center center;
   z-index: -1;
-  
+
+  /* 🔹 Ultra small screens (200px et +) */
+  @media (max-width: 200px) {
+    object-fit: contain;
+    object-position: top;
+    height: auto;
+  }
+
+  /* 🔹 Small mobiles (375px et +) */
+  @media (max-width: 375px) {
+    object-fit: cover;
+    object-position: center;
+    height: 100vh;
+  }
+
+  /* 🔹 Tablettes portrait (768px et +) */
   @media (max-width: 768px) {
-    position: fixed;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
+    object-position: center center;
+  }
+
+  /* 🔹 Tablettes paysage / petits laptops (1024px et +) */
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* 🔹 Grands écrans (1280px et +) */
+  @media (min-width: 1280px) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
   }
 }
