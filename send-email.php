@@ -18,13 +18,14 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-// Protection basique XSS
+// Protection basique XSS // htmlentities permet de convertir les caractères spéciaux en entités HTML par exemple " < > &"
 $email = htmlentities($email, ENT_QUOTES, 'UTF-8');
 $message = htmlentities($message, ENT_QUOTES, 'UTF-8');
 
 $to = 'lucaslipari06@gmail.com';
 $subject = 'Nouveau message depuis le portfolio';
 
+// Construction du message complet
 $fullMessage = "Message :\n" . $message . "\n\nDe : $email";
 $headers = "From: $email\r\n" .
            "Reply-To: $email\r\n" .
