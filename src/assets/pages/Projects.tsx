@@ -132,11 +132,15 @@ const Projects: React.FC = () => {
               <div 
                 className={`carousel-item ${
                   isMobile 
+                  // ? '' : i === active ? 'active' : i === (active - 1 + totalProjects) % totalProjects ? 'prev' : i === (active + 1) % totalProjects ? 'next': '' 
+                  // on demande si l'écran est en mode mobile puis on affiche l'image en fond et si elle est active alors on l'affiche
                     ? ''
                     : i === active
                     ? 'active'
+                    // i === (active - 1 + totalProjects) % totalProjects veut dire que i est le projet précédent % veut dire que si on dépasse on revient au début
                     : i === (active - 1 + totalProjects) % totalProjects
                     ? 'prev'
+                    // i === (active + 1) % totalProjects veut dire que i est le projet suivant // % veut dire que si on dépasse on revient au début
                     : i === (active + 1) % totalProjects
                     ? 'next'
                     : ''
