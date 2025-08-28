@@ -6,6 +6,7 @@ const Contact: React.FC = () => {
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState('');
 
+  // Gestion de l'envoi du formulaire
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('Envoi en cours...');
@@ -17,10 +18,12 @@ const Contact: React.FC = () => {
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
+        // Elle permet de transformer les valeurs des champs email et message en un format compréhensible par le serveur
         body: new URLSearchParams({ email, message }).toString(),
       });
       if (response.ok) {
         setStatus('Merci, votre message a été envoyé ! Je vous répondrai dans les plus brefs délais.');
+        // Réinitialiser les champs du formulaire
         setEmail('');
         setMessage('');
       } else {
@@ -53,7 +56,7 @@ const Contact: React.FC = () => {
               id="email"
               name="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)} // e.target.value c'est l'input de l'email
               required
             />
           </div>
@@ -64,7 +67,7 @@ const Contact: React.FC = () => {
               id="message"
               name="message"
               value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              onChange={(e) => setMessage(e.target.value)} // e.target.value c'est l'input du message
               required
             ></textarea>
           </div>
