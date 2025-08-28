@@ -10,13 +10,18 @@ interface LayoutProps {
   pageTitle: string
 }
 
+// const Layout permet de définir la structure de la page
 const Layout: React.FC<LayoutProps> = ({ children, pageTitle }) => {
+
+  // const [isActive, setIsActive] = useState(false) permet de gérer l'état d'activation du menu
   const [isActive, setIsActive] = useState(false)
 
+  // useEffect permet de mettre à jour le titre de la page
   useEffect(() => {
     document.title = pageTitle
   }, [pageTitle])
 
+  // toggleMenu permet de changer l'état d'activation du menu si on clique sur le bouton
   const toggleMenu = () => {
     setIsActive(prev => !prev)
   }
