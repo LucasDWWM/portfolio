@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/_contact.scss';
 
+// useState permet de gérer l'état des champs du formulaire
 const Contact: React.FC = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
