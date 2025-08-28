@@ -7,6 +7,7 @@ const Contact: React.FC = () => {
   const [status, setStatus] = useState('');
 
   // Gestion de l'envoi du formulaire
+  // const handleSubmit = async (e: React.FormEvent) veut dire que l'on crée une fonction asynchrone qui gère l'envoi du formulaire
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus('Envoi en cours...');
