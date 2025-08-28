@@ -18,7 +18,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-// Protection basique XSS // htmlentities permet de convertir les caractères spéciaux enHTML par exemple " < > & "
+// Protection basique XSS // htmlentities permet de convertir les caractères spéciaux en HTML par exemple " < > & "
 $email = htmlentities($email, ENT_QUOTES, 'UTF-8');
 $message = htmlentities($message, ENT_QUOTES, 'UTF-8');
 
