@@ -146,6 +146,14 @@ const Projects: React.FC = () => {
                     : ''
                 }`}
                 style={{ backgroundImage: `url(${proj.image})` }}
+                  onClick={() => {
+                  if (isMobile) {
+                      const link = proj.live || proj.github;
+                      if (link) {
+                        window.open(link, "_blank");
+                      }
+                    }
+                  }}
               >
                 {/* Header visible uniquement sur desktop pour la slide active */}
                 {!isMobile && i === active && (
