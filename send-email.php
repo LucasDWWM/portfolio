@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     echo json_encode(['message' => 'Méthode non autorisée']);
     exit;
 }
-
+// ?? permet de définir une valeur par défaut si la clé n'existe pas c'est à dire si l'email ou le message n'est pas défini, on lui donne une valeur comme une chaîne vide
 $email = $_POST['email'] ?? '';
 $message = $_POST['message'] ?? '';
 
