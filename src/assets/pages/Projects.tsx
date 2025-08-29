@@ -145,7 +145,9 @@ const Projects: React.FC = () => {
                     ? 'next'
                     : ''
                 }`}
+                // Ici on affiche l'image de fond des projets
                 style={{ backgroundImage: `url(${proj.image})` }}
+                // Au clic sur l'image, on ouvre le lien du projet soit live soit github
                   onClick={() => {
                   if (isMobile) {
                       const link = proj.live || proj.github;
